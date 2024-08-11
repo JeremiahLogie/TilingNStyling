@@ -1,0 +1,414 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #2e8b57; /* Forest Green */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#logo {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+    transform: scale(1.1);
+}
+
+#hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+#hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+.hero {
+    background: url('hero.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 5rem 0;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+    font-size: 3rem;
+    animation: fadeInUp 2s ease-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    animation: fadeInUp 2s ease-out 0.5s;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #2e8b57;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #1f5f3b;
+    transform: scale(1.05);
+}
+
+.intro {
+    background-color: #2e8b57; /* Forest Green */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeInUp 2s ease-out;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.services, .gallery, .contact, .about-us {
+    padding: 2rem;
+    text-align: center;
+    background-color: #e5ffe5; /* Light green background */
+    border: 1px solid #2e8b57;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+.service-card {
+    display: inline-block;
+    width: 30%;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: #2e8b57;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-images .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-images .column img {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.testimonials .testimonial {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+#contact-form {
+    max-width: 500px;
+    margin: auto;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contact-form input[type="submit"] {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#contact-form input[type="submit"]:hover {
+    background-color: #1f5f3b;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2e8b57; /* Forest Green */
+    color: white;
+    position: relative;
+}
+
+#back-to-top {
+    background-color: #1f5f3b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: none;
+}
+
+#back-to-top:hover {
+    background-color: #2e8b57;
+}
+
+.estimate-calculator {
+    background-color: #2e8b57; /* Forest Green */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeInUp 2s ease-out;
+}
+
+.estimate-calculator form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.estimate-calculator label, .estimate-calculator select, .estimate-calculator input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.estimate-calculator input[type="submit"] {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.estimate-calculator input[type="submit"]:hover {
+    background-color: #1f5f3b;
+    transform: scale(1.05);
+}
+
+#estimate-result {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 1rem;
+}
+
+.contact-image {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(46, 139, 87, 0.9); /* Semi-transparent forest green */
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card p {
+    margin: 0.5rem 0;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0.5rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #ddd;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        text-align: center;
+    }
+
+    #hamburger-menu {
+        display: block;
+    }
+
+    .service-card {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .gallery-images {
+        flex-direction: column;
+    }
+
+    .gallery-images .column img {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .estimate-calculator form {
+        width: 100%;
+    }
+}
+
